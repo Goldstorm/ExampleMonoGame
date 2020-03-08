@@ -1,3 +1,16 @@
 bin/
 obj/
 /packages/
+.idea/.idea.MonoGameDesktopGLGame/.idea/contentModel.xml
+
+.idea/.idea.MonoGameDesktopGLGame/.idea/encodings.xml
+
+.idea/.idea.MonoGameDesktopGLGame/.idea/indexLayout.xml
+
+.idea/.idea.MonoGameDesktopGLGame/.idea/modules.xml
+
+.idea/.idea.MonoGameDesktopGLGame/.idea/projectSettingsUpdater.xml
+
+.idea/.idea.MonoGameDesktopGLGame/.idea/vcs.xml
+
+.idea/.idea.MonoGameDesktopGLGame/riderModule.iml
