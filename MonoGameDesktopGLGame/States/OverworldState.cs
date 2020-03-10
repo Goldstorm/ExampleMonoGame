@@ -8,7 +8,6 @@ namespace MonoGameDesktopGLGame.States
     {
         public void Dispose()
         {
-            
         }
 
         public void Update(GameTime gameTime, IGameStateContext gameStateContext)
@@ -23,9 +22,9 @@ namespace MonoGameDesktopGLGame.States
             }        
         }
 
-        public void Draw(GameTime gameTime, GraphicsDevice graphicsDevice)
+        public void Draw(GameTime gameTime)
         {
-            graphicsDevice.Clear(Color.Beige);
+            GameGlobal.Window.GraphicsDevice.Clear(Color.Beige);
         }
         
         public void OnEvent(IGameEvent gameEvent)

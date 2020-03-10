@@ -10,7 +10,6 @@ namespace MonoGameDesktopGLGame.States
         {
         }
         
-
         public void Update(GameTime gameTime, IGameStateContext gameStateContext)
         {
             if (Keyboard.GetState().IsKeyDown(Keys.H))
@@ -23,9 +22,9 @@ namespace MonoGameDesktopGLGame.States
             }
         }
 
-        public void Draw(GameTime gameTime, GraphicsDevice graphicsDevice)
+        public void Draw(GameTime gameTime)
         {
-            graphicsDevice.Clear(Color.Red);
+            GameGlobal.Window.GraphicsDevice.Clear(Color.Red);
         }
 
         public void OnEvent(IGameEvent gameEvent)

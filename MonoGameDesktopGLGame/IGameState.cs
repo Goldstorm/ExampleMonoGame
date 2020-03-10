@@ -8,7 +8,7 @@ namespace MonoGameDesktopGLGame
     public interface IGameState : IDisposable
     {
         void Update(GameTime gameTime, IGameStateContext gameStateContext);
-        void Draw(GameTime gameTime, GraphicsDevice graphicsDevice);
+        void Draw(GameTime gameTime);
         void OnEvent(IGameEvent gameEvent);
     }
 

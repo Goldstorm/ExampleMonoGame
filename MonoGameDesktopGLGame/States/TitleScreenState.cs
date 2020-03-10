@@ -22,9 +22,9 @@ namespace MonoGameDesktopGLGame.States
             }
         }
 
-        public void Draw(GameTime gameTime, GraphicsDevice graphicsDevice)
+        public void Draw(GameTime gameTime)
         {
-            graphicsDevice.Clear(Color.CornflowerBlue);
+            GameGlobal.Window.GraphicsDevice.Clear(Color.CornflowerBlue);
         }
 
         public void OnEvent(IGameEvent gameEvent)

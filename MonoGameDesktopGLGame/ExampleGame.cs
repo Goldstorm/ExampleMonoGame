@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -16,11 +17,12 @@ namespace MonoGameDesktopGLGame
 
         public ExampleGame()
         {
-            graphics = new GraphicsDeviceManager(this);
+            GameGlobal.Init(this);
+            graphics = GameGlobal.Window;
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
-            this.graphics.PreferredBackBufferWidth = 1280;
-            this.graphics.PreferredBackBufferHeight = 720;
+            graphics.PreferredBackBufferWidth = 1280;
+            graphics.PreferredBackBufferHeight = 720;
         }
 
         protected override void Initialize()
@@ -52,18 +54,15 @@ namespace MonoGameDesktopGLGame
 
         protected override void Draw(GameTime gameTime)
         {
-            activeGameState.Draw(gameTime, this.graphics.GraphicsDevice);
+            activeGameState.Draw(gameTime);
             base.Draw(gameTime);
         }
 
         public void SwitchGameState<T>() where T : IGameState
         {
-            foreach (var givenState in gameStates)
+            foreach (var givenState in gameStates.OfType<T>())
             {
-                if (givenState is T)
-                {
-                    nextGameState = givenState;
-                }
+                nextGameState = givenState;
             }
         }
         public void PublishGameEvent(IGameEvent gameEvent)
