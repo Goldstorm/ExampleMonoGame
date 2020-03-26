@@ -14,3 +14,5 @@ obj/
 .idea/.idea.MonoGameDesktopGLGame/.idea/vcs.xml
 
 .idea/.idea.MonoGameDesktopGLGame/riderModule.iml
+.vscode/launch.json
+.vscode/tasks.json

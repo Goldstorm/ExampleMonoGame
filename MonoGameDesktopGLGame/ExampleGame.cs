@@ -12,13 +12,14 @@ namespace MonoGameDesktopGLGame
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
         private List<IGameState> gameStates = new List<IGameState>();
+        private IGameState lastGameState;
         private IGameState activeGameState;
         private IGameState nextGameState;
 
         public ExampleGame()
         {
-            GameGlobal.Init(this);
-            graphics = GameGlobal.Window;
+            GlobalGameWindow.Init(this);
+            graphics = GlobalGameWindow.Window;
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
             graphics.PreferredBackBufferWidth = 1280;
@@ -29,7 +30,7 @@ namespace MonoGameDesktopGLGame
         {
             // TODO: Add your initialization logic here
             gameStates.Add(new TitleScreenState());
-            gameStates.Add(new OverworldState());
+            gameStates.Add(new WorldState());
             gameStates.Add(new BattleState());
 
             SwitchGameState<TitleScreenState>();
@@ -46,7 +47,7 @@ namespace MonoGameDesktopGLGame
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            
+            lastGameState = activeGameState;
             activeGameState = nextGameState;
             activeGameState.Update(gameTime, this);
             base.Update(gameTime);

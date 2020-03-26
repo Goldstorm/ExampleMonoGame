@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace MonoGameDesktopGLGame.States
 {
-    public class OverworldState : IGameState
+    public class WorldState : IGameState
     {
         public void Dispose()
         {
@@ -24,7 +24,7 @@ namespace MonoGameDesktopGLGame.States
 
         public void Draw(GameTime gameTime)
         {
-            GameGlobal.Window.GraphicsDevice.Clear(Color.Beige);
+            GlobalGameWindow.Window.GraphicsDevice.Clear(Color.Beige);
         }
         
         public void OnEvent(IGameEvent gameEvent)

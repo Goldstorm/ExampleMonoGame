@@ -14,7 +14,7 @@ namespace MonoGameDesktopGLGame.States
         {
             if (Keyboard.GetState().IsKeyDown(Keys.H))
             {
-                gameStateContext.SwitchGameState<OverworldState>();
+                gameStateContext.SwitchGameState<WorldState>();
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.T))
             {
@@ -24,7 +24,7 @@ namespace MonoGameDesktopGLGame.States
 
         public void Draw(GameTime gameTime)
         {
-            GameGlobal.Window.GraphicsDevice.Clear(Color.Red);
+            GlobalGameWindow.Window.GraphicsDevice.Clear(Color.Red);
         }
 
         public void OnEvent(IGameEvent gameEvent)

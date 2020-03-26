@@ -4,16 +4,16 @@ using Microsoft.Xna.Framework;
 
 namespace MonoGameDesktopGLGame
 {
-    public class GameGlobal
+    public class GlobalGameWindow
     {
         public static GraphicsDeviceManager Window => instance.graphicsDeviceManager;
-        private static GameGlobal instance;
+        private static GlobalGameWindow instance;
 
         public static void Init(Game game)
         {
             if (instance == null)
             {
-                instance = new GameGlobal {graphicsDeviceManager = new GraphicsDeviceManager(game)};
+                instance = new GlobalGameWindow {graphicsDeviceManager = new GraphicsDeviceManager(game)};
             }
             else
             {
@@ -21,7 +21,7 @@ namespace MonoGameDesktopGLGame
             }
         }
 
-        private GameGlobal()
+        private GlobalGameWindow()
         {
             //Nobody can make me, except me!
         }
